@@ -1,0 +1,49 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.80.210:8761/eureka/
+server:
+  port: 8803
+
+spring:
+  application:
+    name: purchase-data-provider
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm
+  mvc:
+    date-format: yyyy-MM-dd HH:mm
+  profiles:
+    active:
+      - dev
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc.lob.non_contextual_creation: true
+        temp:
+          use_jdbc_metadata_defaults: false
+
+mybatis-plus:
+  type-enums-package: org.xy.api.enums
+  type-aliases-package: org.zhd.purchase.entity
+  # 显示sql
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  server:
+    port: 8603
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

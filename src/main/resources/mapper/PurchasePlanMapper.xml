@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--接口注册-->
+<mapper namespace="org.zhd.purchase.mapper.PurchasePlanMapper">
+    <resultMap id="purhcasePlanPojo" type="org.zhd.purchase.entity.PurchasePlan">
+        <id property="id" column="org_id"></id>
+        <result property="memberCode" column="member_code"></result>
+        <result property="memberGroupName" column="member_group_name"></result>
+        <result property="code" column="org_code"></result>
+        <result property="name" column="org_name"></result>
+        <result property="abbreviate" column="org_abbreviate"></result>
+        <result property="remark" column="org_remark"></result>
+        <result property="phone" column="org_phone"></result>
+        <result property="fax" column="org_fax"></result>
+        <result property="corporation" column="org_corporation"></result>
+        <result property="email" column="org_email"></result>
+        <result property="openAccount" column="org_accounts"></result>
+        <result property="openBank" column="org_bankname"></result>
+        <result property="tfn" column="org_tanu"></result>
+        <result property="address" column="org_addr"></result>
+        <result property="areaCode" column="area_code"></result>
+        <result property="createAt" column="create_at"></result>
+        <result property="updateAt" column="update_at"></result>
+    </resultMap>
+
+
+</mapper>

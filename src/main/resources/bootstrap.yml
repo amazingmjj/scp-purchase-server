@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      uri: http://192.168.80.210:7001/
+      name: rabbitmq, bus
+      label: dev
